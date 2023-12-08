@@ -1,1 +1,30 @@
 # php-cool-features
+
+- USE COMPOSER!
+  - `composer -v` for help
+  - `composer init` for starting a project
+  - Always do `require __DIR__ . '/vendor/autoload.php;` on top of main. That is the line that adds the dependencies installed
+- Classes are modules
+  - Private variables are local
+  - Public variables are global
+  - Setters and getters create permissions that safeguard bad behavior
+  - Classes hold valuable information and functions that do one thing
+- `public`, `protected` and `private` keywords
+  - `static`, `self` and `this` keywords matters too
+    - Great explanation: https://blog.lupecode.com/php-static-vs-self/
+- Magic methods (**get, **set, **sleep, **wakeup) for classes and how to use them
+  - Source 1: https://www.php.net/manual/en/language.oop5.magic.php
+  - Source 2: https://www.php.net/manual/en/language.oop5.overloading.php
+    - READ THE COMMENTS
+    - get, set and call magic methods are bad in most cases, except for handling things that don't existe with more grace. Instead of allowing dynamic assigment, you reject it with context.
+  - serialize and unserialiaze to store objects
+  - invoke to make an object callable (behave like a function) (https://www.php.net/manual/pt_BR/function.usort.php)
+    - call and invoke magic methods are different: the former calls functions that don't exist, the latter makes the object behave like a function (essentially creating a closure, because you keep a set of state in the function)
+- Arrays are Plain Old Objects. They are pretty good. If you want Fancy Clever Objects, use classes.
+- Favor print_r() over var_dump()
+- Segurança em PHP:
+  - https://arquivo.canaltech.com.br/software/Blinde-sua-aplicacao-web-PHP-com-estas-15-dicas-de-seguranca/
+- You can call methods and get properties dynamically with php.
+  - use the notation `$obj->{'methodName'}()` for functions and `obj->{'propertyName'}`.
+  - This is different from the get magic method. The one above doesn't get what isn't there
+  - Remember, just like javascript, you can add new stuff to objects and arrays easily
